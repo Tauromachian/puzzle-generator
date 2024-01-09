@@ -30,6 +30,10 @@ const formats = ["png", "jpg", "csv", "txt", "pdf"];
           {formats.map((format) => <Checkbox label={format} />)}
         </CheckboxGroup>
       </div>
+      <div class="flex flex-wrap gap-2">
+        <Button class="ml-auto">Download puzzles</Button>
+        <Button>Download solutions</Button>
+      </div>
     </Card>
   </main>
 </Layout>
