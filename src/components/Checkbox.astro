@@ -1,0 +1,23 @@
+---
+import { getRandomString } from "../utils/randomGenerator";
+
+const { label } = Astro.props;
+
+const id = getRandomString();
+---
+
+<div class="text-gray-900">
+  <input
+    id={id}
+    id={id}
+    class="appearance-none h-4 w-4 border border-gray-300 rounded bg-white checked:border-0 checked:bg-accent focus:outline-none transition duration-200 mt-1 mr-1 align-top bg-no-repeat bg-center bg-contain cursor-pointer"
+    type="checkbox"
+  />
+  <label
+    for={id}
+    v-if="label"
+    class="inline-block text-sm font-medium cursor-pointer"
+  >
+    {label}
+  </label>
+</div>
