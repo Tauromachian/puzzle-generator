@@ -1,0 +1,10 @@
+---
+const { label } = Astro.props;
+---
+
+<div>
+  <p class="align-top text-sm font-medium">{label}</p>
+  <div class="flex gap-5">
+    <slot />
+  </div>
+</div>
