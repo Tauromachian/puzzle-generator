@@ -26,6 +26,9 @@ const formats = ["png", "jpg", "csv", "txt", "pdf"];
         <TextInput label="Font Name" />
         <TextInput label="Header font size" />
         <Checkbox label="Hide borders" />
+        <CheckboxGroup label="Format">
+          {formats.map((format) => <Checkbox label={format} />)}
+        </CheckboxGroup>
       </div>
     </Card>
   </main>
