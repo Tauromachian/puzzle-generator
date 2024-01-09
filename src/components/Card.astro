@@ -3,9 +3,7 @@ const { class: classes } = Astro.props;
 ---
 
 <div class="bg-primary rounded" class:list={classes}>
-  <div class="p-4">
-    <slot />
-  </div>
+  <slot />
 </div>
 
 <style></style>
