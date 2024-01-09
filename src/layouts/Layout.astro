@@ -18,7 +18,7 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,700;1,700&family=Montserrat:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Averia+Libre:wght@700&family=Cabin:ital,wght@0,700;1,700&family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -39,15 +39,15 @@ const { title } = Astro.props;
     background-size: 224px;
   }
 
-  h1,
+  h1 {
+    font-family: Cabin, sans-serif;
+    font-style: italic;
+  }
+
   h2,
   h3,
   h4,
   h5 {
-    font-family: Cabin, sans-serif;
-  }
-
-  h1 {
-    font-style: italic;
+    font-family: "Averia Libre", serif;
   }
 </style>
