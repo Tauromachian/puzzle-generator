@@ -1,21 +1,13 @@
 ---
 const { class: classes, link = null } = Astro.props;
+
+const Tag = link ? "a" : "button";
 ---
 
-{
-  link ? (
-    <a href={link} class="bg-accent rounded" class:list={classes}>
-      <div class="py-2 px-3">
-        <slot />
-      </div>
-    </a>
-  ) : (
-    <button class="bg-accent rounded" class:list={classes}>
-      <div class="py-2 px-3">
-        <slot />
-      </div>
-    </button>
-  )
-}
+<Tag href={link} class="bg-accent rounded" class:list={classes}>
+  <div class="py-2 px-3">
+    <slot />
+  </div>
+</Tag>
 
 <style></style>
