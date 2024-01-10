@@ -6,8 +6,11 @@ import TextInput from "../components/TextInput.astro";
 import Checkbox from "@/components/Checkbox.astro";
 import CheckboxGroup from "@/components/CheckboxGroup.astro";
 import CardBody from "@/components/CardBody.astro";
+import Table from "@/components/Table.astro";
 
 const formats = ["png", "jpg", "csv", "txt", "pdf"];
+const headers = ["Name", "Number of words used", "Words used", "Actions"];
+const puzzles = [];
 ---
 
 <Layout title="Welcome to Astro.">
@@ -21,23 +24,51 @@ const formats = ["png", "jpg", "csv", "txt", "pdf"];
       <Button>Upload Puzzles</Button>
       <Button>Bulk Delete</Button>
     </div>
-    <Card class="max-w-80">
-      <CardBody class="flex flex-col gap-5">
-        <h3 class="text-xl">Options</h3>
-        <div class="flex flex-col gap-5">
-          <TextInput label="Font Name" />
-          <TextInput label="Header font size" />
-          <Checkbox label="Hide borders" />
-          <CheckboxGroup label="Format">
-            {formats.map((format) => <Checkbox label={format} />)}
-          </CheckboxGroup>
-        </div>
-        <div class="flex flex-col flex-wrap gap-2">
-          <Button>Download all puzzles</Button>
-          <Button>Download all solutions</Button>
-        </div>
-      </CardBody>
-    </Card>
+    <div class="flex gap-4">
+      <Card class="max-w-80">
+        <CardBody class="flex flex-col gap-5">
+          <h3 class="text-xl">Options</h3>
+          <div class="flex flex-col gap-5">
+            <TextInput label="Font Name" />
+            <TextInput label="Header font size" />
+            <Checkbox label="Hide borders" />
+            <CheckboxGroup label="Format">
+              {formats.map((format) => <Checkbox label={format} />)}
+            </CheckboxGroup>
+          </div>
+          <div class="flex flex-col flex-wrap gap-2">
+            <Button>Download all puzzles</Button>
+            <Button>Download all solutions</Button>
+          </div>
+        </CardBody>
+      </Card>
+      <Card class="w-full">
+        <CardBody>
+          <Table>
+            <thead>
+              <tr>
+                {headers.map((header) => <th class="text-left">{header}</th>)}
+              </tr>
+            </thead>
+            {
+              puzzles.map((puzzle) => (
+                <tbody>
+                  <td class="text-left border-b border-gray-400">
+                    {puzzle.name}
+                  </td>
+                  <td class="text-left border-b border-gray-400">
+                    {puzzle.numberOfWords}
+                  </td>
+                  <td class="text-left border-b border-gray-400">
+                    {puzzle.wordsUsed}
+                  </td>
+                </tbody>
+              ))
+            }
+          </Table>
+        </CardBody>
+      </Card>
+    </div>
   </main>
 </Layout>
 
